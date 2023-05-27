@@ -1,8 +1,9 @@
 package prakhar17.developer.dependencyinjectioninandroidwithdagger2
 
 import android.util.Log
+import javax.inject.Inject
 
-class Battery {
+class Battery @Inject constructor(){
     init {
         Log.i("STATUS", "Battery Constructed")
     }

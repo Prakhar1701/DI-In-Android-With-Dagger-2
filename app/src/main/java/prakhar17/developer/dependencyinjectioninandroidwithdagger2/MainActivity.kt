@@ -27,7 +27,10 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-        val smartPhone = SmartPhone(Battery(), MemoryCard(), SIMCard(ServiceProvider()))
+//        val smartPhone = SmartPhone(Battery(), MemoryCard(), SIMCard(ServiceProvider()))
+//            .makeCallWithRecording()
+
+        val smartPhone = DaggerSmartPhoneComponent.create().getSmartPhone()
             .makeCallWithRecording()
     }
 }
