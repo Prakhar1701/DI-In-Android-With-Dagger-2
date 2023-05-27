@@ -36,7 +36,12 @@ class MainActivity : ComponentActivity() {
 //        val smartPhone = DaggerSmartPhoneComponent.create().getSmartPhone()
 //            .makeCallWithRecording()
 
-        DaggerSmartPhoneComponent.create().inject(this)
+//        DaggerSmartPhoneComponent.create().inject(this)
+
+        DaggerSmartPhoneComponent.builder()
+            .memoryCardModule(MemoryCardModule(1000))
+            .build()
+            .inject(this)
         smartPhone.makeCallWithRecording()
     }
 }
