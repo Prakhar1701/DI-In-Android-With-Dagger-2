@@ -9,7 +9,6 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import prakhar17.developer.dependencyinjectioninandroidwithdagger2.ui.theme.DependencyInjectionInAndroidWithDagger2Theme
 
 class MainActivity : ComponentActivity() {
