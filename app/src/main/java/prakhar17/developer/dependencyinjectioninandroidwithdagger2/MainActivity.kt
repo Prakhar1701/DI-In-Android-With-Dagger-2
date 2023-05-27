@@ -27,13 +27,8 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-        val battery = Battery()
-        val memoryCard = MemoryCard()
-        val serviceProvider = ServiceProvider()
-        val simCard = SIMCard(serviceProvider)
-        val smartPhone = SmartPhone(battery, memoryCard, simCard)
-
-        smartPhone.makeCallWithRecording()
+        val smartPhone = SmartPhone(Battery(), MemoryCard(), SIMCard(ServiceProvider()))
+            .makeCallWithRecording()
     }
 }
 
