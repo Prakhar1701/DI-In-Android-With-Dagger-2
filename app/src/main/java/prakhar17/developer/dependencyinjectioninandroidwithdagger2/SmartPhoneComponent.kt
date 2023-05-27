@@ -6,5 +6,6 @@ import dagger.Component
 interface SmartPhoneComponent {
     /*The name of the function can be anything but
       the return type of the function should be the type of dependency required.*/
-    fun getSmartPhone(): SmartPhone
+//    fun getSmartPhone(): SmartPhone
+    fun inject(mainActivity: MainActivity)
 }

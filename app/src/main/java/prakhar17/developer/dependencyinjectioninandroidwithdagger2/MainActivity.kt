@@ -10,8 +10,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import prakhar17.developer.dependencyinjectioninandroidwithdagger2.ui.theme.DependencyInjectionInAndroidWithDagger2Theme
+import javax.inject.Inject
 
 class MainActivity : ComponentActivity() {
+    @Inject
+    lateinit var smartPhone: SmartPhone
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -29,8 +33,11 @@ class MainActivity : ComponentActivity() {
 //        val smartPhone = SmartPhone(Battery(), MemoryCard(), SIMCard(ServiceProvider()))
 //            .makeCallWithRecording()
 
-        val smartPhone = DaggerSmartPhoneComponent.create().getSmartPhone()
-            .makeCallWithRecording()
+//        val smartPhone = DaggerSmartPhoneComponent.create().getSmartPhone()
+//            .makeCallWithRecording()
+
+        DaggerSmartPhoneComponent.create().inject(this)
+        smartPhone.makeCallWithRecording()
     }
 }
 
