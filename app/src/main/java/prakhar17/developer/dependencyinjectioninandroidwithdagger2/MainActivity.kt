@@ -38,9 +38,11 @@ class MainActivity : ComponentActivity() {
 
 //        DaggerSmartPhoneComponent.create().inject(this)
 
-        DaggerSmartPhoneComponent.builder()
-            .memoryCardModule(MemoryCardModule(1000))
-            .build()
+//        DaggerSmartPhoneComponent.builder()
+//            .memoryCardModule(MemoryCardModule(1000))
+//            .build()
+
+        (application as SmartPhoneApplication).smartPhoneComponent
             .inject(this)
         smartPhone.makeCallWithRecording()
     }
